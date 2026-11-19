@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+<meta name="description" content="KOB - Tech">
+<link rel="manifest" href="manifest.json">
+<meta name="theme-color" content="#0d1117">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="Tayus Tech">
+<link rel="apple-touch-icon" href="image/kob.png">
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/sell.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+ 
+  <!--============================
+      Sell / Trade-in Section 
+==============================-->
+<section id="sell" class="dark-bg">
+<div class="sell">
+<form id="sellForm" class="form-crd" onsubmit="handleEstimate(event)">
+  <h2>Sell Your Old Appliance</h2>
+ <p>Get instant value evaluation for your used AC or Refrigerator.</p>
+<div class="form-group-grid">
+<div class="input-grp">
+  <label>Appliance Type</label>
+  <select id="sellType" required>
+   <option>Select Type</option>
+   <option>Refrigerator</option>
+   <option>Air Conditioner</option>
+  </select> 
+</div> 
+<div class="input-grp">
+ <label>Age of Appliance</label>
+ <select id="sellAge" required>
+ <option value="1">Under 1 Year</option>
+ <option value="2">1 - 3 Years</option>
+ <option value="4">4+ Years</option>
+ </select>
+</div>
+<div class="input-grp">
+ <label>Working Condition</label>
+ <select id="sellCondition" required>
+ <option value="excellent">Excellent (Like New)</option>
+ <option value="good">Good (Minor wear)</option>
+ <option value="faulty">Needs Repair / Faulty</option>
+ </select>
+</div>
+</div>
+  <div class="input-grp full-width">
+   <label>Brand & Model Details</label>
+   <input type="text" placeholder="e.g., Samsung French Door 2021 Model" required>
+  </div>
+  <button type="submit" class="btn primary-btn full-btn">Calculate Estimated Valuation</button>
+</form>
+  <div id="estimateResult" class="estimate-box"></div>
+  
+    <!-- Result Display Box -->
+<div id="resultBox" style="display: none;"></div>
+<!-- WhatsApp Submit Button (Hidden until valuation is calculated) -->
+<button id="whatsappBtn" style="display: none; background-color: #25D366; color: white; border: none; padding: 12px 20px; font-weight: bold; border-radius: 8px; width: 100%; margin-top: 10px; cursor: pointer;">
+  Submit Request via WhatsApp
+</button>
+</div>
+</section>
+
+
+<!-- BACK TO TOP & BOTTOM -->
+<button id="backToTop"> ↑ </button>
+<button id="scrollToBottomBtn" onclick="scrollToBottom()" title="Go to bottom">↓</button>
+
+
+<!-- BOTTOM NAVIGATION -->
+<nav class="bottom-nav">
+<button class="nav-item active" data-page="Home">
+  <a href="index.html"><i class="fa-solid fa-house"></i></a>
+  <span>Home</span>
+</button>
+  <button class="nav-item sell-btn" data-page="Sell">
+    <a href="sell.html"><i class="fa-regular fa-square-plus"></i></a>
+    <span>Sell</span>
+  </button>
+  <button class="nav-item" data-page="Saved">
+    <a href="service.html"><i class="fa-solid fa-tools"></i></a>
+    <span>Service</span>
+  </button>
+  <button class="nav-item" data-page="Messages">
+    <a href="message.html"><i class="fa-regular fa-message"></i></a>
+    <span>Contact</span>
+  </button>
+  <button class="nav-item" data-page="Profile">
+    <a href="about.html"><i class="fa-regular fa-user"></i></a>
+    <span>About</span>
+  </button>
+  <button class="nav-item" data-page="Faq">
+  <a href="faq.html"><i class="fa-solid fa-question"></i></a>
+  <span>Faq</span>
+</button>
+</nav>
+
+  <script src="script/sell.js"></script>
+</body>
+
+</html>

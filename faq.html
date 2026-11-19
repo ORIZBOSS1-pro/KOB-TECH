@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title></title>
+ <meta name="description" content="KOB - Tech">
+ <link rel="manifest" href="manifest.json">
+ <meta name="theme-color" content="#0d1117">
+ <meta name="mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-capable" content="yes">
+ <meta name="apple-mobile-web-app-status-bar-style" content="default">
+ <meta name="apple-mobile-web-app-title" content="Tayus Tech">
+ <link rel="apple-touch-icon" href="image/kob.png">
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<!-- Font Awesome Icons -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/faq.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+ 
+ <!-- FAQ SECTION -->
+<section class="faq" id="faq">
+  <div class="faq-content">
+    <p class="small-title">HELP CENTER</p>
+    <h1>Frequently Asked<span>Questions</span></h1>
+    <p class="faq-text">Find answers to the most common questions about our website, services and account.</p>
+    <div class="search-box"><span>🔍</span>
+      <input type="text" id="search" placeholder="Search your question...">
+    </div>
+  </div>
+</section>
+<main class="faq-container">
+  <div class="category-buttons">
+    <button class="active" onclick="filterCategory('All', this)">
+      All</button>
+    <button onclick="filterCategory('General', this)">General</button>
+    <button onclick="filterCategory('Account', this)">Account</button>
+    <button onclick="filterCategory('Payment', this)">Payment</button>
+    <button onclick="filterCategory('Support', this)">Support</button>
+  </div>
+  <div id="faqList">
+    
+    <!-- FAQ 1 -->
+    <div class="faq-item" data-category="General">
+      <button class="faq-question" onclick="toggleFAQ(this)">
+        <div>
+          <small>General</small>
+          <h3>What is this website about?</h3>
+        </div>
+        <span class="icon"> + </span>
+      </button>
+      <div class="faq-answer" style="display:none;">
+        <p>This website provides useful information, services, and resources for users in an easy-to-use platform.</p>
+      </div>
+    </div>
+    
+    <!-- FAQ 2 -->
+    <div class="faq-item" data-category="Account">
+      <button class="faq-question" onclick="toggleFAQ(this)">
+        <div>
+          <small>Account</small>
+          <h3>do i need to create an account before i transact?</h3>
+        </div>
+        <span class="icon"> + </span>
+      </button>
+      <div class="faq-answer" style="display:none;">
+        <p>No, you do not need to Sign Up or Register before you complete any Transaction. Meanwhile, If you which to stay informed about the latest news on our new service and products, you can subscribe to our channel using the newsletter provided. To subscribe to our channel <a href="about.html#newsletter">Click Here ↓</a></p>
+      </div>
+    </div>
+    
+    <!-- FAQ 3 -->
+    <div class="faq-item" data-category="Payment">
+      <button class="faq-question" onclick="toggleFAQ(this)">
+        <div>
+          <small>Payment</small>
+          <h3>What payment methods are accepted?</h3>
+        </div>
+        <span class="icon"> + </span>
+      </button>
+      <div class="faq-answer" style="display:none;">
+        <p>Available payment methods depend on the services provided. Supported options will be displayed during checkout.</p>
+      </div>
+    </div>
+    
+    <!-- FAQ 4 -->
+    <div class="faq-item" data-category="Support">
+      <button class="faq-question" onclick="toggleFAQ(this)">
+        <div>
+          <small>Support</small>
+          <h3>How can I contact support?</h3>
+        </div>
+        <span class="icon"> + </span>
+      </button>
+      <div class="faq-answer" style="display:none;">
+        <p>You can contact support through the Contact Us page, email, or any other support channel provided on the website.</p>
+      </div>
+    </div>
+    <!-- NO RESULT -->
+    <div id="noResult" class="no-result" style="display:none;">
+      <h3>No questions found</h3>
+      <p>Try searching for something else.</p>
+    </div>
+</main>
+<section class="faq-contact-section">
+  <h2>Still have questions?</h2>
+  <p>Can't find the answer you're looking for? Contact our support team.</p>
+  <a href="message.html"><button class="faq-contact-button">Contact Support</button></a>
+</section>
+
+
+<!-- BACK TO TOP & BOTTOM -->
+<button id="backToTop"> ↑ </button>
+<button id="scrollToBottomBtn" onclick="scrollToBottom()" title="Go to bottom">↓</button>
+
+
+<!-- BOTTOM NAVIGATION -->
+<nav class="bottom-nav">
+<button class="nav-item active" data-page="Home">
+  <a href="index.html"><i class="fa-solid fa-house"></i></a>
+  <span>Home</span>
+</button>
+  <button class="nav-item sell-btn" data-page="Sell">
+    <a href="sell.html"><i class="fa-regular fa-square-plus"></i></a>
+    <span>Sell</span>
+  </button>
+  <button class="nav-item" data-page="Saved">
+    <a href="service.html"><i class="fa-solid fa-tools"></i></a>
+    <span>Service</span>
+  </button>
+  <button class="nav-item" data-page="Messages">
+    <a href="message.html"><i class="fa-regular fa-message"></i></a>
+    <span>Contact</span>
+  </button>
+  <button class="nav-item" data-page="Profile">
+    <a href="about.html"><i class="fa-regular fa-user"></i></a>
+    <span>About</span>
+  </button>
+  <button class="nav-item" data-page="Faq">
+  <a href="faq.html"><i class="fa-solid fa-question"></i></a>
+  <span>Faq</span>
+</button>
+</nav>
+<script src="script/faq.js"></script>
+</body>
+
+</html>
