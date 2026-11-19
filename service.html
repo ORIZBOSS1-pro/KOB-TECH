@@ -52,7 +52,7 @@
       </ul>
     </div>
     <!-- BOOKING FORM -->
-    <form class="form-card" id="repairForm">
+    <form class="form-card" id="repairForm" action="https://formspree.io/f/xbglkzyk" method="POST" enctype="multipart/form-data" novalidate>
       <div class="input-grp">
         <label for="fullName">Full Name</label>
         <input
@@ -114,12 +114,44 @@
           placeholder="Enter service address..."
         ></input>
       </div>
+       <div class="input-grp">
+        <label for="confirmChannel">Confirm Booking Via</label>
+        <select id="confirmChannel" name="confirmChannel" required>
+          <option value="whatsapp" selected>WhatsApp</option>
+          <option value="telegram">Telegram</option>
+          <option value="email">Email</option>
+        </select>
+      </div>
+
+      <!-- Optional Email input (shown when Email is chosen) -->
+      <div class="input-grp channel-extra" id="emailGrp" style="display: none;">
+        <label for="customerEmail">Email Address</label>
+        <input
+          type="email"
+          id="customerEmail"
+          name="email"
+          placeholder="you@example.com"
+        >
+      </div>
+
+      <!-- Optional Telegram handle/number (shown when Telegram is chosen) -->
+      <div class="input-grp channel-extra" id="telegramGrp" style="display: none;">
+        <label for="telegramUser">Telegram Username or Phone</label>
+        <input
+          type="text"
+          id="telegramUser"
+          name="telegram"
+          placeholder="@username or +234..."
+        >
+      </div>
+
       <button
         type="submit"
         class="btn secondary-btn full-btn"
+        id="submitBookingBtn"
       >
-        <i class="fa-brands fa-whatsapp"></i>
-        Confirm Service Booking
+        <i class="fa-brands fa-whatsapp" id="submitIcon"></i>
+        <span id="submitText">Confirm Service Booking</span>
       </button>
     </form>
   </div>
@@ -161,5 +193,4 @@
 
 <script src="script/service.js"></script>
 </body>
-
 </html>
